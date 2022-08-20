@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>receiver</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.emit('joinReceiver');
+    socket.on('message', function(data){document.write(data)});
+</script>
+<body>
+    <p>receiver</p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.emit('joinSender');
+    socket.on('message', function(data){document.write(data)});
+
+    function send(msg) {
+        socket.emit('message', msg);
+    }
+</script>
+<body>
+    <p>sender</p>
+    <button onclick="send('hello')">Send</button>
+</body>
+</html>
